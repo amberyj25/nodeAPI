@@ -15,4 +15,9 @@ router.post('/login', logInOutController.logIn);
 /* GET logout */
 router.post('/logout', logInOutController.logOut);
 
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
 module.exports = router;
