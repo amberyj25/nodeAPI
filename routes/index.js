@@ -16,6 +16,12 @@ router.get('/shoppingCartA', shoppingCartController.getShoppingCartA);
 /* GET shoppingCart B */
 router.get('/shoppingCartB', shoppingCartController.getShoppingCartB);
 
+/* CREATE shoppingCart A */
+router.post('/shoppingCartA', shoppingCartController.createShoppingCartA);
+
+/* CREATE shoppingCart B */
+router.post('/shoppingCartB', shoppingCartController.createShoppingCartB);
+
 /* DELETE shoppingCart A */
 router.delete('/shoppingCartA', shoppingCartController.deleteShoppingCartA);
 

@@ -22,13 +22,34 @@ const ShoppingNews = mongoose.model('shoppingnews', ShoppingSchema);
 class shoppingCartBModel {
   constructor() {};
 
+  async createShoppingCartB(reqData, getDataFromProductListB) {
+    const existDataFromShopping = await ShoppingNews.findOne({ product_id: reqData.product_id });
+    if (existDataFromShopping) {
+      return await ShoppingNews.updateOne(
+        { product_id: reqData.product_id },
+        {
+          $set: {
+            qty: reqData.qty,
+            total: reqData.qty * getDataFromProductListB.price
+          }
+        }
+      );
+    } else {
+      return await ShoppingNews.create({
+        product: getDataFromProductListB,
+        product_id: reqData.product_id,
+        qty: reqData.qty,
+        total: reqData.qty * getDataFromProductListB.price
+      });
+    };
+  };
+
   async getShoppingCartB() {
-    return ShoppingNews.find();
+    return await ShoppingNews.find();
   };
 
   async deleteShoppingCartB(id) {
-    console.log({product_id: id})
-    return ShoppingNews.deleteOne({product_id: id});
+    return await ShoppingNews.deleteOne({product_id: id});
   };
 }
 
