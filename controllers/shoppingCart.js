@@ -65,7 +65,7 @@ exports.getShoppingCartB = async (req, res) => {
 };
 
 exports.deleteShoppingCartA = async (req, res) => {
-  const { id } = req.body;
+  const { id } = req.params;
 
   try {
     res.send({
@@ -80,7 +80,7 @@ exports.deleteShoppingCartA = async (req, res) => {
 };
 
 exports.deleteShoppingCartB = async (req, res) => {
-  const { id } = req.body;
+  const { id } = req.params;
 
   try {
     res.send({

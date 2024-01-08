@@ -23,10 +23,10 @@ router.post('/shoppingCartA', shoppingCartController.createShoppingCartA);
 router.post('/shoppingCartB', shoppingCartController.createShoppingCartB);
 
 /* DELETE shoppingCart A */
-router.delete('/shoppingCartA', shoppingCartController.deleteShoppingCartA);
+router.delete('/shoppingCartA/:id', shoppingCartController.deleteShoppingCartA);
 
 /* DELETE shoppingCart B */
-router.delete('/shoppingCartB', shoppingCartController.deleteShoppingCartB);
+router.delete('/shoppingCartB/:id', shoppingCartController.deleteShoppingCartB);
 
 /* GET login */
 router.post('/login', logInOutController.logIn);
