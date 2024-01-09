@@ -5,7 +5,7 @@ const productListB = require('../models/productListB');
 
 
 exports.createShoppingCartA = async (req, res) => {
-  const reqData = req.body;
+  const reqData = req.body.data;
   const productAList = await productListA.getProductListA();
   const getDataFromProductListA = productAList.find(product => product.id === reqData.product_id);
 
@@ -22,7 +22,7 @@ exports.createShoppingCartA = async (req, res) => {
 };
 
 exports.createShoppingCartB = async (req, res) => {
-  const reqData = req.body;
+  const reqData = req.body.data;
   const productBList = await productListB.getProductListB();
   const getDataFromProductListB = productBList.find(product => product.id === reqData.product_id);
 
